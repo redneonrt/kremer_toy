@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<link href="napa.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+function transfer(){
+	cost = "{COST}";
+	sell = "{SELL}";
+	top.window.fillForm(cost,sell);
+}
+function setFocus()
+{
+	document.getElementById("send").focus();
+}   
+</script>
+</head>
+
+<body onload="setFocus()">
+<div>{STORE_SELECT}</div>
+<table width="400" cellspacing="0" cellpadding="20">
+  <tr>
+    <td>Cost</td>
+    <td>${COST}</td>
+  </tr>
+  <tr>
+    <td>Markup </td>
+    <td>{MARKUP}%</td>
+  </tr>
+  <tr>
+    <td>Sell</td>
+    <td>${SELL}</td>
+  </tr>
+  <tr>
+    <td><div align="center">
+      <form id="turn" name="turn" method="post" action="">
+        <input type="submit" name="reset" id="reset" value="Reset" class="button" />
+        <br />
+      </form>
+      </div></td>
+    <td><form>
+      <div align="center">
+        <input class="button" type="submit" name="send" id="send" value="Send &amp; Close" onclick="parent.parent.GB_CURRENT.hide();transfer()"/>
+      </div>
+    </form></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<form action="edit.php" method="post">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><div align="center">Converting to Factory... </div></td>
+      </tr>
+      <tr>
+        <td><div align="center">{MESSAGE}</div></td>
+      </tr>
+    </table>
+    <br />
+      <table class="part_info_table" width="100%" border="0" cellspacing="0" cellpadding="5">
+        <tr>
+          <td class="part_info_header" colspan="5"><div align="center">.::Part Information::.
+            <input name="type" type="hidden" id="type" value="special" />
+          </div></td>
+        </tr>
+        <tr>
+          <td>Line:</td>
+          <td>Part Number: </td>
+          <td>Description:</td>
+          <td>Quantity:</td>
+          <td>Shipping from: </td>
+        </tr>
+        <tr>
+          <td><strong>
+            {LINE_CODE}
+                <input name="line_code" type="hidden" id="line_code" value="{LINE_CODE}" />
+          </strong></td>
+          <td><strong>
+            {PART_NUM}
+                <input name="part_num" type="hidden" id="part_num" value="{PART_NUM}" />
+          </strong></td>
+          <td><strong>{DESC}</strong></td>
+          <td><strong>{QTY}
+            <input name="qty" type="hidden" id="qty" value="{QTY}" />
+          </strong></td>
+        <td><strong>{LOCATION}</strong></td>
+        </tr>
+        </table>
+      <br>
+      <table class="cust_info_table" width="100%" border="0" cellspacing="0" cellpadding="5">
+        <tr>
+          <td colspan="3" class="cust_info_header"><div align="center">.::Customer Information::.</div></td>
+        </tr>
+        <tr>
+          <td width="20%">Name / Account:</td>
+          <td width="40%">
+          {DISPLAY_NAME}
+            <input name="name" type="hidden" id="name" value="{NAME}" /></td>
+          <td width="40%" rowspan="2">Notes:<br />
+            <textarea name="notes" id="notes">{NOTES}
+          </textarea></td>
+        </tr>
+        <tr>
+          <td>Phone # / P.O. # :</td>
+          <td><strong>
+          <input name="number" type="text" id="number" value="{NUMBER}" size="15" />
+        *Required</strong></td>
+      </tr>
+        </table>
+	  <br>
+  <table width="100%" border="0" cellspacing="0" cellpadding="5" class="ship_info_table">
+    <tr>
+      <td colspan="4" class="ship_info_header"><div align="center">.::Shipping Information ::. </div></td>
+        </tr>
+    <tr>
+      <td width="20%">Tracking Number: </td>
+          <td width="30%"><strong>&nbsp;&nbsp;
+            <input name="tracking" type="text" id="tracking" value="{TRACKING}" size="10">
+            * Required </strong></td>
+          <td width="20%">Freight Cost: </td>
+          <td width="30%"><strong>$
+            <input name="freight" type="text" id="freight" value="{FREIGHT}" size="10">
+            *Required</strong></td>
+        </tr>
+    </table>
+	  <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="5" class="price_info_table">
+        <tr>
+          <td colspan="4" class="price_info_header"><div align="center">.::Pricing Information::. </div></td>
+        </tr>
+        <tr>
+          <td width="20%">Cost:</td>
+          <td width="30%"><strong>$
+            <input name="cost" type="text" id="cost" value="{COST}" size="10">
+            (Optional)</strong></td>
+          <td width="20%">Sell Price: </td>
+          <td width="30%"><strong>$
+            <input name="sell" type="text" id="sell" value="{SELL}" size="10">
+            (Optional)</strong></td>
+        </tr>
+        </table>
+	  <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="5" class="rec_info_table">
+      <tr>
+        <td colspan="4" class="rec_info_header"><div align="center">.::Receiving Information::.</div></td>
+      </tr>
+      <tr>
+        <td><div align="right">Called back from dc: </div></td>
+        <td><div align="left"><strong>{CALL_BACK}
+          <input name="call_back" type="hidden" id="call_back" value="{CALL_BACK}" />        
+        </strong></div></td>
+        <td><div align="right">Order ID: </div></td>
+        <td><div align="left"><strong>{ID}
+          <input name="id" type="hidden" id="id" value="{ID}" />        
+        </strong></div></td>
+      </tr>
+      <tr>
+        <td><div align="right">Checked in at store: </div></td>
+        <td><div align="left"><strong>{RECEIVED}
+          <input name="received" type="hidden" id="received" value="{RECEIVED}" />        
+        </strong></div></td>
+        <td><div align="right">Store #:</div></td>
+        <td><div align="left"><strong>{STORE}
+          <input name="store" type="hidden" id="store" value="{STORE}" />        
+        </strong></div></td>
+      </tr>
+      <tr>
+        <td><div align="right">Prebilled:</div></td>
+        <td><div align="left"><strong>{PREBILL}
+          <input name="prebill" type="hidden" id="prebill" value="{PREBILL}" />        
+        </strong></div></td>
+        <td><div align="right">Ordered at: </div></td>
+        <td><div align="left"><strong>{TIME}
+          <input name="time" type="hidden" id="time" value="{TIME}" />        
+        </strong></div></td>
+      </tr>
+      <tr>
+        <td><div align="right">Employee:</div></td>
+        <td><div align="left"><strong>
+          {EMP}
+          <input name="emp" type="hidden" id="emp" value="{EMP}" />        
+        </strong></div></td>
+        <td><div align="right">Shipping from: </div></td>
+        <td><div align="left"><strong>{LOCATION}</strong></div></td>
+      </tr>
+      <tr>
+        <td><div align="right">Sold?</div></td>
+        <td><div align="left"><strong>{SOLD}
+          <input name="sold" type="hidden" id="sold" value="{SOLD}" />        
+        </strong></div></td>
+        <td><div align="right">Class:</div></td>
+        <td><div align="left"><strong>{CLASS}</strong></div></td>
+      </tr>
+    </table>
+    
+    <br>
+      <br />
+      <table width="100%" border="0" cellspacing="0" cellpadding="5" class="op_info_table">
+      <tr>
+        <td colspan="2" class="op_info_header"><div align="center">||Operations||</div></td></tr>
+      <tr>
+        <td><div align="center">
+          <input name="convert" type="submit" id="convert" value="Save Changes" class="edit_button"/>
+          </div></td>
+        <td><div align="center">
+          <input class="edit_button" type="button" value="Cancel Changes" onClick="window.location='edit.php?id={ID}'"/>
+          </div></td>
+      </tr>
+    </table></td></tr>
+</table>
+</form>

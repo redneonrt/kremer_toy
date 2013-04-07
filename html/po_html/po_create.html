@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<link href="napa.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="{TABLE_WIDTH}" align="center" class="main_table">
+  <tr>
+    <td height="90" colspan="2" background="{IMAGE}" class="index_h1"><div align="center" >{IMAGE_TEXT}</div></td>
+  </tr>
+  <tr>
+    <td class="nav_panel"   valign="top">
+	{NAV_LINKS}
+    </td>
+    <td width="100%" align="center" valign="middle"><div align="center">
+    <form action="" method="post" name="po_form" id="po_form">
+      <table width="100%" border="0" cellspacing="0" cellpadding="3">
+        <tr>
+          <td colspan="3" class="po_table_one"><div align="center">{MESSAGE}</div></td>
+          </tr>
+        <tr>
+          <td class="po_table_one">Vendor</td>
+          <td class="po_table_one">Customer Name / Account</td>
+          <td class="po_table_one">Employee #</td>
+        </tr>
+        <tr>
+          <td class="po_table_one"><input name="vendor" type="text" id="vendor" size="20" /></td>
+          <td class="po_table_one"><input name="name" type="text" id="name" size="20" /></td>
+          <td class="po_table_one"><input name="emp" type="text" id="emp" size="20" /></td>
+        </tr>
+        <tr>
+          <td class="po_table_one">&nbsp;</td>
+          <td class="po_table_one">Customer Phone / P.O.</td>
+          <td class="po_table_one">Pre-billed?</td>
+        </tr>
+        <tr>
+          <td class="po_table_one"><input name="part_field_num" type="hidden" id="part_field_num" value="{PART_FIELD_NUM}" /></td>
+          <td class="po_table_one"><input name="number" type="text" id="number" size="20" /></td>
+          <td class="po_table_one"><input name="prebill" type="checkbox" value="T" /></td>
+        </tr>
+      </table>
+      <br />
+      {PART_TABLE}
+      <table width="80%" border="0" cellspacing="0" cellpadding="3">
+        <tr>
+          <td><div align="center">
+            <input class="po_submit_button" type="submit" name="submit" id="button" value="Submit" />
+          </div></td>
+        </tr>
+      </table>
+    </form>
+      {ADD_FIELD}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">{FOOTER}</div></td>
+  </tr>
+</table>
+</body>
+</html>

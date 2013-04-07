@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>{TITLE}</title>
+<link href="napa.css" rel="stylesheet" type="text/css" />
+<SCRIPT LANGUAGE="JavaScript">
+//This moves to the next field when the enter key is pressed              
+function handleEnter (field, event) {
+		var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+		if (keyCode == 13) {
+			var i;
+			for (i = 0; i < field.form.elements.length; i++)
+				if (field == field.form.elements[i])
+					break;
+			i = (i + 1) % field.form.elements.length;
+			field.form.elements[i].focus();
+			return false;
+		} 
+		else
+		return true;
+	}   
+function setFocus()
+{
+	document.mform.cost.focus();
+}   
+// End -->
+</script>
+</head>
+
+<body onload="setFocus()">
+<div>{STORE_SELECT}</div>
+<form name="mform" action="" method="post">
+<table width="400" cellpadding="20">
+  <tr>
+    <td width="29%"><div align="right">Cost $</div></td>
+    <td width="71%"><label>
+      <input name="cost" type="text" size="6" id="cost"  onkeypress="return handleEnter(this, event)"/>
+      </label></td>
+  </tr>
+  <tr>
+    <td><div align="right">Markup %</div></td>
+    <td><label>
+    <input name="markup" type="text" size="6" id="markup" />
+    <font size="2">*Min. of 40% markup* </font></label></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input class="button" type="submit" name="button" id="button" value="Calculate" />
+    </div></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
